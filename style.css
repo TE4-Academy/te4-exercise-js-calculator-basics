@@ -32,63 +32,44 @@ h1 {
     font-family: monospace;
 }
 
-/* Knapp-området */
+/* Knapp-området - OBS! Bara en rad knappar nu */
 .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 5px; /* Väldigt liten gap - du kanske vill ändra? */
     margin-bottom: 20px;
 }
 
-/* Alla knappar */
+/* Alla knappar - har några problem som du behöver fixa! */
 button {
-    padding: 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
+    padding: 5px; /* För liten padding? */
+    font-size: 12px; /* För liten text? */
+    border: 2px solid black; /* Ful ram? */
+    border-radius: 0px; /* Inga rundade hörn? */
     cursor: pointer;
-    transition: background-color 0.2s;
+    /* Ingen bakgrundsfärg? Knapparna ser konstiga ut! */
 }
 
-/* Nummer-knappar */
-.number {
-    background-color: #e0e0e0;
-    color: #333;
-}
+/* TODO: Knapparna behöver färger! */
+/* Här behöver du lägga till CSS för olika typer av knappar */
 
-.number:hover {
-    background-color: #d0d0d0;
-}
+/* Exempel för nummer-knappar: */
+/* .number { */
+/*     background-color: ? */
+/*     color: ? */
+/* } */
 
-/* Operator-knappar */
-.operator {
-    background-color: #ff9500;
-    color: white;
-}
+/* Exempel för operator-knappar: */
+/* .operator { */
+/*     background-color: ? */
+/*     color: ? */
+/* } */
 
-.operator:hover {
-    background-color: #e6850e;
-}
-
-/* Equals-knapp */
-.equals {
-    background-color: #ff9500;
-    color: white;
-}
-
-.equals:hover {
-    background-color: #e6850e;
-}
-
-/* Clear-knapp */
-.clear {
-    background-color: #a6a6a6;
-    color: white;
-}
-
-.clear:hover {
-    background-color: #8f8f8f;
-}
+/* Exempel för equals-knapp: */
+/* .equals { */
+/*     background-color: ? */
+/*     color: ? */
+/* } */
 
 /* Debug-område */
 .debug {

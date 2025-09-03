@@ -1,65 +1,89 @@
-// JavaScript Kalkylator Basics - Startfil
-// Här kommer du att skriva dina funktioner steg för steg
+// JavaScript Kalkylator Basics - Förenklad version
+// Vi börjar bara med ADDITION och bara 2 siffror!
 
-// STEG 1: Enkla funktioner (functions) som returnerar värden
-// Dessa funktioner kommer du att skriva först för att förstå grunderna
+// STEG 1: En enkel addition-funktion
+function addNumbers(a, b) {
+    return a + b;
+}
 
-// TODO: Skriv en funktion som lägger ihop två tal
-// function addNumbers(a, b) {
-//     return a + b;
-// }
+// STEG 2: Globala variabler (bara för addition nu)
+let firstNumber = '';    
+let operation = '';      
+let secondNumber = '';   
+let displayValue = '0';  
 
-// TODO: Skriv funktioner för subtraction, multiplication, division
+// STEG 3: Uppdatera displayen
+function updateDisplay() {
+    const displayElement = document.getElementById('display');
+    displayElement.textContent = displayValue;
+}
 
+// STEG 4: Uppdatera debug-info
+function updateDebug() {
+    document.getElementById('first-number').textContent = firstNumber || '-';
+    document.getElementById('operation').textContent = operation || '-';
+    document.getElementById('second-number').textContent = secondNumber || '-';
+}
 
-// STEG 2: Globala variabler för att hålla koll på kalkylatorn
-let firstNumber = '';    // Det första talet
-let operation = '';      // Vilken operation (+, -, ×, ÷)
-let secondNumber = '';   // Det andra talet
-let displayValue = '0';  // Vad som visas på skärmen
+// STEG 5: Hantera siffror (bara 1 och 2 fungerar nu)
+function handleNumber(number) {
+    if (operation === '') {
+        firstNumber = firstNumber + number; // OBS: Vad händer här? Hint: string concatenation
+        displayValue = firstNumber;
+    } else {
+        secondNumber = secondNumber + number; // OBS: Samma problem här
+        displayValue = secondNumber;
+    }
+    
+    updateDisplay();
+    updateDebug();
+}
 
-// STEG 3: Funktion för att uppdatera displayen
-// TODO: Skriv en funktion som uppdaterar vad som visas på skärmen
-// function updateDisplay() {
-//     
-// }
+// STEG 6: Hantera bara plus-operationen
+function handleOperator(op) {
+    if (firstNumber !== '' && operation === '') {
+        operation = op;
+        updateDebug();
+    }
+}
 
-// STEG 4: Funktion för att uppdatera debug-info
-// TODO: Skriv en funktion som visar debug-informationen
-// function updateDebug() {
-//     
-// }
+// STEG 7: Räkna ut (bara addition)
+function calculate() {
+    if (firstNumber !== '' && operation === '+' && secondNumber !== '') {
+        // PROBLEM: firstNumber och secondNumber är strings! 
+        // Vad händer när du adderar "1" + "2"?
+        const result = addNumbers(firstNumber, secondNumber);
+        
+        displayValue = result;
+        updateDisplay();
+        
+        // Återställ
+        firstNumber = '';
+        operation = '';
+        secondNumber = '';
+        updateDebug();
+    }
+}
 
-// STEG 5: Funktioner för att hantera knapptryck
-// TODO: Skriv en funktion som körs när man trycker på en siffra
-// function handleNumber(number) {
-//     
-// }
+// STEG 8: Event listeners (bara för knapparna vi har)
+document.getElementById('btn-1').addEventListener('click', function() {
+    handleNumber('1');
+});
 
-// TODO: Skriv en funktion som körs när man trycker på en operator
-// function handleOperator(op) {
-//     
-// }
+document.getElementById('btn-2').addEventListener('click', function() {
+    handleNumber('2');
+});
 
-// TODO: Skriv en funktion som räknar ut resultatet
-// function calculate() {
-//     
-// }
+document.getElementById('btn-plus').addEventListener('click', function() {
+    handleOperator('+');
+});
 
-// TODO: Skriv en funktion som rensar allt
-// function clearAll() {
-//     
-// }
+document.getElementById('btn-equals').addEventListener('click', function() {
+    calculate();
+});
 
-// STEG 6: Event listeners - koppla funktioner till knappar
-// TODO: Lägg till event listeners för alla knappar
-// Exempel:
-// document.getElementById('btn-1').addEventListener('click', function() {
-//     handleNumber('1');
-// });
-
-// TESTOMRÅDE - Här kan du testa dina funktioner
+// TESTOMRÅDE
 console.log('Kalkylator laddad!');
-
-// Testa dina funktioner här:
-// console.log('Test addition:', addNumbers(5, 3)); // Ska visa 8
+console.log('Testa: Tryck 1, sedan +, sedan 2, sedan =');
+console.log('Vad händer? Får du 12 istället för 3?');
+console.log('Hint: Strings vs Numbers!');
