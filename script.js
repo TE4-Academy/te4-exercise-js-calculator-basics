@@ -7,10 +7,10 @@ function addNumbers(a, b) {
 }
 
 // STEG 2: Globala variabler (bara för addition nu)
-let firstNumber = '';    
-let operation = '';      
-let secondNumber = '';   
-let displayValue = '0';  
+let firstNumber = '';
+let operation = '';
+let secondNumber = '';
+let displayValue = '0';
 
 // STEG 3: Uppdatera displayen
 function updateDisplay() {
@@ -34,7 +34,7 @@ function handleNumber(number) {
         secondNumber = secondNumber + number; // OBS: Samma problem här
         displayValue = secondNumber;
     }
-    
+
     updateDisplay();
     updateDebug();
 }
@@ -53,10 +53,10 @@ function calculate() {
         // PROBLEM: firstNumber och secondNumber är strings! 
         // Vad händer när du adderar "1" + "2"?
         const result = addNumbers(firstNumber, secondNumber);
-        
+
         displayValue = result;
         updateDisplay();
-        
+
         // Återställ
         firstNumber = '';
         operation = '';
@@ -66,19 +66,19 @@ function calculate() {
 }
 
 // STEG 8: Event listeners (bara för knapparna vi har)
-document.getElementById('btn-1').addEventListener('click', function() {
+document.getElementById('btn-1').addEventListener('click', function () {
     handleNumber('1');
 });
 
-document.getElementById('btn-2').addEventListener('click', function() {
+document.getElementById('btn-2').addEventListener('click', function () {
     handleNumber('2');
 });
 
-document.getElementById('btn-plus').addEventListener('click', function() {
+document.getElementById('btn-plus').addEventListener('click', function () {
     handleOperator('+');
 });
 
-document.getElementById('btn-equals').addEventListener('click', function() {
+document.getElementById('btn-equals').addEventListener('click', function () {
     calculate();
 });
 

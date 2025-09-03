@@ -36,16 +36,21 @@ h1 {
 .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px; /* Väldigt liten gap - du kanske vill ändra? */
+    gap: 5px;
+    /* Väldigt liten gap - du kanske vill ändra? */
     margin-bottom: 20px;
 }
 
 /* Alla knappar - har några problem som du behöver fixa! */
 button {
-    padding: 5px; /* För liten padding? */
-    font-size: 12px; /* För liten text? */
-    border: 2px solid black; /* Ful ram? */
-    border-radius: 0px; /* Inga rundade hörn? */
+    padding: 5px;
+    /* För liten padding? */
+    font-size: 12px;
+    /* För liten text? */
+    border: 2px solid black;
+    /* Ful ram? */
+    border-radius: 0px;
+    /* Inga rundade hörn? */
     cursor: pointer;
     /* Ingen bakgrundsfärg? Knapparna ser konstiga ut! */
 }

@@ -399,15 +399,3 @@ document.getElementById('btn-clear').addEventListener('click', () => {
 - Kontrollera att `updateDisplay()` anropas
 - Kontrollera att `displayValue` har rätt värde
 
----
-
-## Bonus: Förbättringar
-
-När grunderna fungerar, kan du prova:
-
-1. **Decimaltal:** Lägg till en decimal-knapp
-2. **Tangentbord:** Lyssna på tangentbordstryck
-3. **Historik:** Visa tidigare beräkningar
-4. **Styling:** Förbättra utseendet
-
-Grattis! Du har byggt din första JavaScript-applikation! 🎉
